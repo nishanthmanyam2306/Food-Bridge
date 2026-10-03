@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans bg-white text-ink-900 dark:bg-ink-900 dark:text-white transition-colors duration-300;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+::selection {
+  @apply bg-clay-500/30;
+}
+
+/* Glassmorphism card */
+.glass {
+  @apply bg-white/70 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 shadow-glass;
+}
+
+.glass-panel {
+  @apply glass rounded-xl2;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3 font-semibold text-white transition-all hover:bg-brand-600 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
+}
+
+.btn-accent {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-clay-500 px-6 py-3 font-semibold text-white transition-all hover:bg-clay-600 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand-500 px-6 py-3 font-semibold text-brand-500 dark:text-brand-300 dark:border-brand-300 transition-all hover:bg-brand-500 hover:text-white hover:-translate-y-0.5;
+}
+
+.card {
+  @apply rounded-xl2 bg-white dark:bg-ink-800 border border-black/5 dark:border-white/10 shadow-sm hover:shadow-md transition-shadow;
+}
+
+.input {
+  @apply w-full rounded-lg border border-black/10 dark:border-white/15 bg-white/60 dark:bg-white/5 px-4 py-3 text-sm focus-ring;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold tracking-wide;
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-ink-900;
+}
+
+/* Skeleton loader */
+.skeleton {
+  @apply animate-pulse rounded-lg bg-black/5 dark:bg-white/10;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
